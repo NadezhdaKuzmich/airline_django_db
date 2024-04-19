@@ -12,5 +12,6 @@ def flight(request, flight_id):
     current_flight = Flight.objects.get(pk=flight_id)
 
     return render(request, "flights/flight.html", {
-        "flight": current_flight
+        "flight": current_flight,
+        "passengers": current_flight.passengers.all()
     })
